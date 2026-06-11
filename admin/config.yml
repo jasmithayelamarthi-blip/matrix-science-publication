@@ -1,0 +1,59 @@
+# Matrix Science Publication — Decap/Netlify CMS configuration
+# Editors log in at /admin and publish articles without touching code.
+# On Netlify: enable Identity + Git Gateway, then invite editors by email.
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Uncomment to run the CMS locally with `npx decap-server`:
+# local_backend: true
+
+media_folder: "assets/uploads"   # where uploaded images are stored in the repo
+public_folder: "/assets/uploads" # how those images are referenced on the site
+
+publish_mode: editorial_workflow  # gives editors a Draft → Review → Ready flow
+
+collections:
+  # A single JSON file the live site reads directly — no build step required.
+  - name: "articles"
+    label: "Articles"
+    files:
+      - name: "articles"
+        label: "All articles"
+        file: "content/articles.json"
+        description: "Add, edit or remove published articles. Saving publishes to the live site."
+        format: "json"
+        fields:
+          - name: "articles"
+            label: "Articles"
+            label_singular: "Article"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.subject}}"
+            fields:
+              - { name: "id", label: "Unique ID (e.g. 2026-physics-1)", widget: "string", hint: "Lowercase, no spaces. Must be unique." }
+              - name: "subject"
+                label: "Subject"
+                widget: "select"
+                options:
+                  - { label: "Physics", value: "physics" }
+                  - { label: "Biology", value: "biology" }
+                  - { label: "Chemistry", value: "chemistry" }
+                  - { label: "Astrophysics", value: "astrophysics" }
+                  - { label: "Biotechnology", value: "biotechnology" }
+              - name: "type"
+                label: "Article type"
+                widget: "select"
+                options:
+                  - "Research Article"
+                  - "Review"
+                  - "Perspective"
+                  - "News & Views"
+                  - "Editorial"
+                  - "Brief Communication"
+              - { name: "date", label: "Publication date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "summary", label: "One-line summary", widget: "text" }
+              - { name: "author", label: "Author(s)", widget: "string", required: false }
+              - { name: "image", label: "Thumbnail image", widget: "image", required: false, hint: "Optional — a subject-coloured thumbnail is generated automatically if left blank." }
+              - { name: "url", label: "External link (optional)", widget: "string", required: false }

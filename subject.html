@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subject — Matrix Science Publication</title>
+  <meta name="description" content="Research articles by subject at Matrix Science Publication.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <header class="page-hero subject" id="subjectHero">
+      <div class="wrap">
+        <div class="crumb"><a href="index.html">Home</a> › <a href="articles.html">Subjects</a> › <span id="subjectCrumb">Subject</span></div>
+        <h1><span id="subjectGlyph" style="margin-right:10px"></span><span id="subjectName">Subject</span></h1>
+        <p id="subjectDesc"></p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Articles</h2>
+          <span class="filter-count" id="subjectCount"></span>
+        </div>
+        <ul class="article-list" id="subjectArticles"></ul>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/subject.js"></script>
+</body>
+</html>

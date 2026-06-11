@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrix Science Publication — International High-School Science Journal</title>
+  <meta name="description" content="Matrix Science Publication is a student-run, peer-reviewed international science journal publishing rigorous research by high-school scientists in physics, biology, chemistry, astrophysics and biotechnology.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <!-- HERO with animated geode -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-copy">
+          <span class="lede-badge">Peer-reviewed · Student-run · International</span>
+          <h1>Science, cracked open.</h1>
+          <p class="lede">Matrix publishes rigorous research by high-school scientists across five fields. Crack the geode to explore a subject.</p>
+          <span class="hint" id="geodeHint"><span class="pulse"></span> Click the geode to crack it open</span>
+        </div>
+        <div class="geode-stage" id="geodeStage" aria-label="Animated geode"></div>
+      </div>
+    </section>
+
+    <!-- SUBJECT STRIP -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Explore by subject</h2>
+          <a class="more" href="articles.html">All research articles →</a>
+        </div>
+        <div class="subject-strip" id="subjectStrip"></div>
+      </div>
+    </section>
+
+    <!-- LATEST ARTICLES -->
+    <section class="section section-alt">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Latest research</h2>
+          <a class="more" href="articles.html">Browse all →</a>
+        </div>
+        <div class="filters">
+          <div class="filter">
+            <label for="homeType">Article type</label>
+            <select id="homeType"></select>
+          </div>
+          <div class="filter">
+            <label for="homeSubject">Subject</label>
+            <select id="homeSubject"></select>
+          </div>
+          <span class="filter-count" id="homeCount"></span>
+        </div>
+        <ul class="article-list" id="homeArticles"></ul>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/geode.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

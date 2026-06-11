@@ -14,14 +14,15 @@ const SUBJECTS = {
   },
   biology: {
     key: 'biology', name: 'Biology', glyph: '🧬',
-    color: '#121524', soft: '#C0C9DB',
-    gradient: ['#C0C9DB', '#9DACCC', '#485F88', '#384C65', '#121524']
+    // steel blue
+    color: '#1E2A4A', soft: '#C8D4E8',
+    gradient: ['#C8D4E8', '#8FA4C4', '#4A6490', '#2E4470', '#1E2A4A']
   },
   chemistry: {
     key: 'chemistry', name: 'Chemistry', glyph: '⚗',
-    // light mint → sage → forest → (emerald, deep-forest)  [two rightmost swapped]
-    color: '#0A5C36', soft: '#D6F0E0',
-    gradient: ['#D6F0E0', '#8FBFA3', '#2E7D4F', '#0A5C36', '#0B3D2A']
+    // light mint → deep teal-green
+    color: '#073B3A', soft: '#D4EDED',
+    gradient: ['#D4EDED', '#8FC9C7', '#3A8A88', '#145856', '#073B3A']
   },
   astrophysics: {
     key: 'astrophysics', name: 'Astrophysics', glyph: '✦',
@@ -31,9 +32,9 @@ const SUBJECTS = {
   },
   biotechnology: {
     key: 'biotechnology', name: 'Biotechnology', glyph: '🔬',
-    // deep dark teal
-    color: '#051C1F', soft: '#D6EDEC',
-    gradient: ['#D6EDEC', '#8FC9C6', '#3E8B89', '#14524F', '#051C1F']
+    // deep teal
+    color: '#0A5450', soft: '#D6EEEC',
+    gradient: ['#D6EEEC', '#8DCBC8', '#3A9A97', '#1A7370', '#0A5450']
   }
 };
 

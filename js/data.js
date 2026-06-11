@@ -25,13 +25,15 @@ const SUBJECTS = {
   },
   astrophysics: {
     key: 'astrophysics', name: 'Astrophysics', glyph: '✦',
-    color: '#5b21b6', soft: '#E7DAF7',
-    gradient: ['#E7DAF7', '#B79AE0', '#8B5CD6', '#6D28D9', '#3B0F66']
+    // deep midnight navy
+    color: '#0D1B2A', soft: '#DCE3EC',
+    gradient: ['#DCE3EC', '#9FB1C7', '#5C7693', '#2A4259', '#0D1B2A']
   },
   biotechnology: {
     key: 'biotechnology', name: 'Biotechnology', glyph: '🔬',
-    color: '#0d9488', soft: '#D2F4F0',
-    gradient: ['#D2F4F0', '#7FD8CE', '#2FB3A6', '#0D9488', '#0B5F58']
+    // deep dark teal
+    color: '#051C1F', soft: '#D6EDEC',
+    gradient: ['#D6EDEC', '#8FC9C6', '#3E8B89', '#14524F', '#051C1F']
   }
 };
 

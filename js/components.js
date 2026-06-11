@@ -79,7 +79,7 @@
             { label: 'Contact', href: 'contact.html' }
           ]) +
           '<li class="nav-item"><a class="nav-link" href="wordle.html">Science Wordle</a></li>' +
-          '<li class="nav-item"><a class="nav-link" href="crossword.html">Crossword</a></li>' +
+          '<li class="nav-item"><a class="nav-link" href="crossword.html">Science Crossword</a></li>' +
         '</ul>' +
       '</div></nav>' +
 

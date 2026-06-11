@@ -51,6 +51,7 @@
           navItem('Explore content', [
             { head: 'Browse' },
             { label: 'Research articles', href: 'articles.html' },
+            { label: 'Videos', href: 'videos.html' },
             { label: 'Physics', href: 'subject.html?s=physics', dot: S.physics.color },
             { label: 'Biology', href: 'subject.html?s=biology', dot: S.biology.color },
             { label: 'Chemistry', href: 'subject.html?s=chemistry', dot: S.chemistry.color },
@@ -78,6 +79,7 @@
             { label: 'Contact', href: 'contact.html' }
           ]) +
           '<li class="nav-item"><a class="nav-link" href="wordle.html">Science Wordle</a></li>' +
+          '<li class="nav-item"><a class="nav-link" href="crossword.html">Crossword</a></li>' +
         '</ul>' +
       '</div></nav>' +
 
@@ -146,7 +148,9 @@
           '<li><a href="contact.html">Contact</a></li>' +
         '</ul></div>' +
         '<div class="footer-col"><h4>Engage</h4><ul>' +
+          '<li><a href="videos.html">Videos</a></li>' +
           '<li><a href="wordle.html">Science Wordle</a></li>' +
+          '<li><a href="crossword.html">Science Crossword</a></li>' +
           '<li><a href="contact.html#alerts">Sign up for alerts</a></li>' +
           '<li><a href="contact.html#submit">Submit a manuscript</a></li>' +
           '<li><a href="admin/index.html">Editor login (CMS)</a></li>' +

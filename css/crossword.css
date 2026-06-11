@@ -1,0 +1,61 @@
+/* =========================================================
+   Science Crossword — scoped under .xword
+   ========================================================= */
+.xword { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 36px; align-items: start; }
+.xword-main { min-width: 0; }
+
+.xword-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.xword-timer { font-family: var(--sans); font-variant-numeric: tabular-nums; font-size: 18px; font-weight: 700; color: var(--ink-soft); background: var(--paper-2); border: 1px solid var(--rule); border-radius: 8px; padding: 6px 12px; }
+.xword-buttons { display: flex; gap: 8px; }
+.xword-buttons .btn { padding: 9px 16px; font-size: 14px; }
+
+.xword-cluebar { display: flex; align-items: stretch; gap: 0; background: #e8f3fb; border: 1px solid #cfe6f6; border-radius: 8px; margin-bottom: 14px; overflow: hidden; }
+.xword-cluebar-text { flex: 1; padding: 13px 14px; font-family: var(--sans); font-size: 15.5px; font-weight: 600; color: var(--ink); display: flex; align-items: center; }
+.xword-prev, .xword-next { border: 0; background: transparent; color: var(--link); font-size: 22px; width: 46px; cursor: pointer; }
+.xword-prev:hover, .xword-next:hover { background: #d6eaf8; }
+.xword-prev { border-right: 1px solid #cfe6f6; }
+.xword-next { border-left: 1px solid #cfe6f6; }
+
+.xword-board-wrap { position: relative; max-width: 560px; }
+.xword-board {
+  display: grid; gap: 0; width: 100%; aspect-ratio: 1 / 1;
+  border: 3px solid var(--ink); background: var(--ink); outline: none; touch-action: manipulation;
+}
+.xword-cell { position: relative; background: #fff; border: 1px solid #cbd0d8; display: flex; align-items: center; justify-content: center; user-select: none; }
+.xword-cell.block { background: var(--ink); border-color: var(--ink); }
+.xword-cell .xnum { position: absolute; top: 1px; left: 2px; font-family: var(--sans); font-size: clamp(8px, 1.5vw, 11px); line-height: 1; color: var(--ink-soft); pointer-events: none; }
+.xword-cell .xltr { font-family: var(--sans); font-weight: 700; font-size: clamp(14px, 3.6vw, 26px); text-transform: uppercase; color: var(--ink); }
+.xword-cell.hl { background: #cfe7fb; }
+.xword-cell.active { background: #ffd84d; }
+.xword-cell.wrong .xltr { color: #c0392b; }
+.xword-cell.wrong::after { content: ""; position: absolute; inset: 0; border: 2px solid #e7a8a1; }
+.xword-cell.revealed .xltr { color: var(--link); }
+
+.xword-input { position: absolute; opacity: 0; width: 1px; height: 1px; border: 0; padding: 0; pointer-events: none; }
+
+.xword-message { font-family: var(--sans); font-size: 15px; font-weight: 600; min-height: 22px; margin-top: 14px; color: var(--ink-soft); }
+.xword-message.win { color: #176a37; }
+.xword-fact { margin-top: 14px; border: 1px solid var(--rule); border-left: 5px solid #2e9e5b; border-radius: 10px; padding: 16px 18px; background: var(--paper-2); display: none; }
+.xword-fact.show { display: block; }
+.xword-fact .fl { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: #176a37; }
+.xword-fact p { font-family: var(--sans); font-size: 15px; color: var(--ink-soft); margin: 6px 0 0; }
+
+.xword-clues { display: grid; grid-template-columns: 1fr; gap: 22px; }
+.xword-clue-col h2 { font-size: 16px; text-transform: uppercase; letter-spacing: 1px; font-family: var(--sans); border-bottom: 2px solid var(--ink); padding-bottom: 6px; margin: 0 0 8px; }
+.xword-clue-col ol { list-style: none; margin: 0; padding: 0; }
+.xword-clue-col li { display: flex; gap: 8px; padding: 6px 8px; font-family: var(--sans); font-size: 14.5px; color: var(--ink); cursor: pointer; border-left: 3px solid transparent; border-radius: 0 4px 4px 0; }
+.xword-clue-col li:hover { background: var(--paper-2); }
+.xword-clue-col li.active { background: #e8f3fb; border-left-color: var(--link); font-weight: 600; }
+.xword-clue-col li b { min-width: 20px; text-align: right; color: var(--ink-soft); font-weight: 700; }
+.xword-clue-col li.done b { color: #2e9e5b; }
+
+@media (max-width: 860px) {
+  .xword { grid-template-columns: 1fr; gap: 26px; }
+  .xword-board-wrap { max-width: 460px; margin: 0 auto; }
+  .xword-clues { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .xword-clues { grid-template-columns: 1fr; }
+  .xword-toolbar { flex-direction: column; align-items: stretch; }
+  .xword-buttons { justify-content: space-between; }
+}

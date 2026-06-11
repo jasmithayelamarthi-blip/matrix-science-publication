@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Science Crossword — Matrix Science Publication</title>
+  <meta name="description" content="Play a NYT-style science crossword covering physics, chemistry, biology and general science.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/crossword.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <div class="crumb"><a href="index.html">Home</a> › Science Crossword</div>
+        <h1>Science Crossword</h1>
+        <p>A NYT-style mini puzzle with clues spanning physics, chemistry, biology and general science. Click a square, type, and use the arrow keys to move.</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="xword">
+          <div class="xword-main">
+            <div class="xword-toolbar">
+              <span class="xword-timer" id="xwTimer" aria-live="off">00:00</span>
+              <div class="xword-buttons">
+                <button class="btn ghost" id="xwCheck" type="button">Check</button>
+                <button class="btn ghost" id="xwReveal" type="button">Reveal</button>
+                <button class="btn ghost" id="xwClear" type="button">Clear</button>
+              </div>
+            </div>
+
+            <div class="xword-cluebar" id="xwClueBar" role="status" aria-live="polite">
+              <button class="xword-prev" id="xwPrev" aria-label="Previous clue">‹</button>
+              <span class="xword-cluebar-text" id="xwClueBarText">—</span>
+              <button class="xword-next" id="xwNext" aria-label="Next clue">›</button>
+            </div>
+
+            <div class="xword-board-wrap">
+              <div class="xword-board" id="xwBoard" role="grid" aria-label="Crossword grid" tabindex="0"></div>
+              <input id="xwInput" class="xword-input" aria-hidden="true" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" inputmode="text">
+            </div>
+
+            <div class="xword-message" id="xwMessage" role="status" aria-live="polite"></div>
+          </div>
+
+          <div class="xword-clues">
+            <div class="xword-clue-col">
+              <h2>Across</h2>
+              <ol id="xwAcross"></ol>
+            </div>
+            <div class="xword-clue-col">
+              <h2>Down</h2>
+              <ol id="xwDown"></ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/crossword.js"></script>
+</body>
+</html>

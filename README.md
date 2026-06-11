@@ -8,10 +8,13 @@ A student-run, peer-reviewed **international high-school science journal**. Clea
 
 ## ✨ Features
 
-- **Animated SVG geode hero** — click to crack it open; each crystal is a subject and links to its page.
+- **3D WebGL geode hero (Three.js)** — a photorealistic rocky geode with a bumpy normal-mapped exterior that **cracks open in 3D** on click, revealing glossy, light-reflecting crystal clusters coloured per subject and lit by an inner glow. Subtle auto-orbit; click a cluster to open its subject page. Falls back to a static subject menu if WebGL is unavailable.
+- **Premium hero background** — deep `#0a0e1a → #060810` gradient with film-grain noise and a radial light bloom behind the geode.
 - **Nature-style article listings** — subject tag, type, date, bold title, summary and auto-generated thumbnail, with Article Type / Subject / Year filters.
-- **Subject pages** — themed per subject, listing that field's articles (`subject.html?s=physics`).
+- **Subject pages** — themed per subject with 5-stop gradients, listing that field's articles (`subject.html?s=physics`).
+- **Videos hub** — Nature-style video section with subject filter tags and placeholder video cards.
 - **Science Wordle** — a fully working 6-guess game with 50 five-letter science words and a fun fact on every win or loss. Gray (absent) letters **fade out and disappear** from the keyboard so only letters still in play remain.
+- **Science Crossword** — a NYT-style 11×11 crossword (validated, fully interlocking) with science clues across physics, chemistry, biology and general science; click/keyboard navigation, Check / Reveal / Clear, a timer, and a fun fact on solving.
 - **About, Team & Contact pages** — mission, five-step editorial process, values, history, vision; founder + placeholder team slots; validated contact form (wired for Netlify Forms).
 - **Netlify CMS (`/admin`)** — editors publish new articles without touching code.
 - **Fully mobile responsive** with an accessible nav (keyboard + ARIA).
@@ -23,17 +26,20 @@ A student-run, peer-reviewed **international high-school science journal**. Clea
 ├── index.html            # Homepage (geode hero + latest articles)
 ├── articles.html         # All research articles + filters
 ├── subject.html          # Per-subject page (?s=physics|biology|…)
+├── videos.html           # Videos hub (subject filter tags + cards)
 ├── wordle.html           # Science Wordle game
+├── crossword.html        # Science Crossword (NYT-style)
 ├── about.html            # Mission, editorial process, values, history, vision
 ├── team.html             # Journal staff (founder + placeholders)
 ├── contact.html          # Contact form (Netlify Forms ready)
 ├── css/main.css          # Design system
+├── css/crossword.css     # Crossword-specific styles
 ├── js/
-│   ├── data.js           # Subjects + placeholder articles + SVG thumbnails
+│   ├── data.js           # Subjects (gradients) + articles + videos + SVG thumbnails
 │   ├── components.js     # Shared header/nav/footer
 │   ├── render.js         # Article-row rendering helpers
-│   ├── geode.js          # Animated geode
-│   ├── home.js / articles.js / subject.js / wordle.js / contact.js
+│   ├── geode3d.js        # 3D WebGL geode (Three.js, loaded via CDN import map)
+│   ├── home.js / articles.js / subject.js / videos.js / wordle.js / crossword.js / contact.js
 ├── admin/                # Netlify (Decap) CMS — config.yml + dashboard
 ├── content/articles.json # Articles published via the CMS (read by the site)
 ├── assets/               # Favicon + CMS image uploads

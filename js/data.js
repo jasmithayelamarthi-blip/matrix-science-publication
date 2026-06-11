@@ -4,12 +4,35 @@
    generator (no binary image assets required).
    ========================================================= */
 
+/* Each subject carries a 5-stop gradient (light → deep) used by the 3D geode
+   crystals and subject theming. `color` is the deep crystal/tag colour. */
 const SUBJECTS = {
-  physics:       { key: 'physics',       name: 'Physics',       color: '#1e3a8a', soft: '#dbe3f6', glyph: '⚛' },
-  biology:       { key: 'biology',       name: 'Biology',       color: '#047857', soft: '#d6efe4', glyph: '🧬' },
-  chemistry:     { key: 'chemistry',     name: 'Chemistry',     color: '#b45309', soft: '#f7e6cf', glyph: '⚗' },
-  astrophysics:  { key: 'astrophysics',  name: 'Astrophysics',  color: '#5b21b6', soft: '#e7ddf6', glyph: '✦' },
-  biotechnology: { key: 'biotechnology', name: 'Biotechnology', color: '#0d9488', soft: '#d2efec', glyph: '🔬' }
+  physics: {
+    key: 'physics', name: 'Physics', glyph: '⚛',
+    color: '#391B49', soft: '#E0CFDB',
+    gradient: ['#E0CFDB', '#8C779C', '#6B557E', '#513F64', '#391B49']
+  },
+  biology: {
+    key: 'biology', name: 'Biology', glyph: '🧬',
+    color: '#121524', soft: '#C0C9DB',
+    gradient: ['#C0C9DB', '#9DACCC', '#485F88', '#384C65', '#121524']
+  },
+  chemistry: {
+    key: 'chemistry', name: 'Chemistry', glyph: '⚗',
+    // light mint → sage → forest → (emerald, deep-forest)  [two rightmost swapped]
+    color: '#0A5C36', soft: '#D6F0E0',
+    gradient: ['#D6F0E0', '#8FBFA3', '#2E7D4F', '#0A5C36', '#0B3D2A']
+  },
+  astrophysics: {
+    key: 'astrophysics', name: 'Astrophysics', glyph: '✦',
+    color: '#5b21b6', soft: '#E7DAF7',
+    gradient: ['#E7DAF7', '#B79AE0', '#8B5CD6', '#6D28D9', '#3B0F66']
+  },
+  biotechnology: {
+    key: 'biotechnology', name: 'Biotechnology', glyph: '🔬',
+    color: '#0d9488', soft: '#D2F4F0',
+    gradient: ['#D2F4F0', '#7FD8CE', '#2FB3A6', '#0D9488', '#0B5F58']
+  }
 };
 
 const SUBJECT_ORDER = ['physics', 'biology', 'chemistry', 'astrophysics', 'biotechnology'];
@@ -81,6 +104,22 @@ const ARTICLES = [
     author: 'F. Bianchi' }
 ];
 
+/* Placeholder video library (Nature-style video hub). */
+const VIDEOS = [
+  { id: 'v01', subject: 'physics', title: 'Inside a tabletop particle detector', duration: '6:24', date: '2026-05-30', speaker: 'MSP Studio · with M. Okafor' },
+  { id: 'v02', subject: 'astrophysics', title: 'How students reduce real telescope data', duration: '8:11', date: '2026-05-22', speaker: 'MSP Studio · with T. Fischer' },
+  { id: 'v03', subject: 'biology', title: 'Field methods: surveying a woodland in 5 steps', duration: '5:47', date: '2026-05-15', speaker: 'MSP Field Group' },
+  { id: 'v04', subject: 'chemistry', title: 'Smartphone colorimetry, explained', duration: '7:02', date: '2026-05-08', speaker: 'MSP Studio · with E. Larsson' },
+  { id: 'v05', subject: 'biotechnology', title: 'A safe at-home PCR walkthrough', duration: '9:38', date: '2026-05-01', speaker: 'MSP Studio · with F. Bianchi' },
+  { id: 'v06', subject: 'physics', title: 'Building a 3D-printed torsion balance', duration: '4:55', date: '2026-04-24', speaker: 'MSP Studio · with K. Brandt' },
+  { id: 'v07', subject: 'astrophysics', title: 'Reading a Cepheid light curve', duration: '6:40', date: '2026-04-17', speaker: 'MSP Studio · with A. Novák' },
+  { id: 'v08', subject: 'chemistry', title: 'Green perovskite precursors in the lab', duration: '10:12', date: '2026-04-10', speaker: 'MSP Studio · with D. Petrova' },
+  { id: 'v09', subject: 'biology', title: 'Designing a fair drought-stress trial', duration: '5:20', date: '2026-04-03', speaker: 'MSP Studio · with A. Kowalski' },
+  { id: 'v10', subject: 'biotechnology', title: 'From compost to bioplastic: the pipeline', duration: '8:49', date: '2026-03-27', speaker: 'MSP Studio · with M. Santos' },
+  { id: 'v11', subject: 'physics', title: 'Why we publish raw data and code', duration: '3:58', date: '2026-03-20', speaker: 'Editorial · J. Yelamarthi' },
+  { id: 'v12', subject: 'astrophysics', title: 'Tracking sunspots to measure solar rotation', duration: '7:33', date: '2026-02-26', speaker: 'MSP Studio · with C. Mwangi' }
+];
+
 /* ---------- Inline-SVG thumbnail generator ---------- */
 function subjectThumb(subjectKey, seed) {
   const s = SUBJECTS[subjectKey] || SUBJECTS.physics;
@@ -143,5 +182,5 @@ async function loadAllArticles() {
 }
 
 if (typeof window !== 'undefined') {
-  window.MSP = { SUBJECTS, SUBJECT_ORDER, ARTICLE_TYPES, ARTICLES, subjectThumb, formatDate, loadAllArticles };
+  window.MSP = { SUBJECTS, SUBJECT_ORDER, ARTICLE_TYPES, ARTICLES, VIDEOS, subjectThumb, formatDate, loadAllArticles };
 }
